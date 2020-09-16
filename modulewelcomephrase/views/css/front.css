@@ -25,3 +25,12 @@
 * Don't forget to prefix your containers with your own identifier
 * to avoid any conflicts with others containers.
 */
+
+.divphrase{
+    text-align:center;
+    margin:2%;
+    padding:3%;
+    box-shadow: 2px 2px 8px 0 rgba(0,0,0,.8);
+    border-radius: 3px;
+    color:red;
+}

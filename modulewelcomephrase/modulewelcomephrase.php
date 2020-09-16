@@ -30,8 +30,7 @@ if (!defined('_PS_VERSION_')) {
 
 use PrestaShop\PrestaShop\Core\Module\WidgetInterface;
 
-class Modulewelcomephrase extends Module implements WidgetInterface
-{
+class Modulewelcomephrase extends Module implements WidgetInterface {
     protected $config_form = false;
 
     public function __construct()
@@ -192,18 +191,16 @@ class Modulewelcomephrase extends Module implements WidgetInterface
         $this->context->controller->addCSS($this->_path.'/views/css/front.css');
     }
     
-    public function renderWidget($hookName, array $configuration)
-    {
+    public function renderWidget($hookName , array $configuration ) {
         
         $this->context->smarty->assign($this->getWidgetVariables($hookName, $configuration));
         $template =  '/views/templates/front/plantilla.tpl';
  
         //return $this->display(__FILE__, $template);
-        return $this->fetch('module:modulewelcomephrase'.$template);
+        return $this->fetch( 'module:modulewelcomephrase'.$template);
     }
     
-    public function getWidgetVariables($hookName, $configuration)
-    {
+    public function getWidgetVariables($hookName, array $configuration = []) {
         return array(
             'MODULEWELCOMEPHRASE_PHRASE' => Configuration::get('MODULEWELCOMEPHRASE_PHRASE', 'HOLA PEPE'),
         );
